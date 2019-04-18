@@ -100,7 +100,7 @@ int ipv4_skb_to_auditdata(struct sk_buff *skb,
 
 int ipv6_skb_to_auditdata(struct sk_buff *skb,
 		struct common_audit_data *ad, u8 *proto);
-		
+
 #ifdef CONFIG_AUDIT
 void common_lsm_audit(struct common_audit_data *a,
 	void (*pre_audit)(struct audit_buffer *, void *),
