@@ -7,3 +7,4 @@
 #include "vince-qrd.dtsi"
 #include "vince-camera.dtsi"
 #include "vince-gpu-oc.dtsi"
+#include "vince-dmi-oc.dtsi"
