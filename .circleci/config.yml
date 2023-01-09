@@ -5,5 +5,5 @@ jobs:
     steps:
       - checkout
       - run:
-         name: Run script to start building kernel
-         command: bash build-kernel.sh
+         name: Reeeeeeee
+         command: bash ci.sh
