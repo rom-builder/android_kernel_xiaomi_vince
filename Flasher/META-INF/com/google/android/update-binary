@@ -469,18 +469,13 @@ if [ -f version ]; then
   ui_printfile version;
   ui_print " ";
 fi;
-ui_print "==========================================";
-ui_print "|                                        |";
-ui_print "|     |  |   __   °  _|_                 |";
-ui_print "|     |  |  |  |  |   |   |/\  |  \/     |";
-ui_print "|     |__|  |  |  |   |   |    |  /\     |";
-ui_print "|                                        |";
 ui_print "|========================================|";
-ui_print "|  Kernel         : Unitrix-Kernel       |";
+ui_print "|  Kernel         : Nito Forever 2023    |";
 ui_print "|  Device         : Redmi 5 Plus         |";
-ui_print "|  Linux version  : 4.9                  |";
+ui_print "|  Linux version  : 4.9.337 (rip)        |";
 ui_print "|  Compiler       : Cosmic clang         |";
-ui_print "|  Maintainer     : GhostMaster69-dev    |";
+ui_print "|  Made by        : Slightly@Keternal    |";
+ui_print "|  My Best Regard : GhostMaster69-dev    |";
 ui_print "|========================================|";
 ui_print "| AnyKernel3 by osm0sis @xda-developers. |";
 ui_print "==========================================";
@@ -491,7 +486,7 @@ do_devicecheck;
 do_versioncheck;
 do_levelcheck;
 
-ui_print "Wait,Installing Unitrix Kernel...";
+ui_print "Installing ...";
 CORE=$($BB grep -oE 'ak.*core.sh' anykernel.sh);
 [ -f tools/$CORE ] || $BB ln -s $AKHOME/tools/ak*-core.sh $AKHOME/tools/$CORE;
 PATH="$AKHOME/bin:$PATH" home=$AKHOME $BB ash anykernel.sh $2;
@@ -508,12 +503,12 @@ if [ "$(file_getprop anykernel.sh do.cleanup)" == 1 ]; then
   cleanup;
 fi;
 
-ui_print "==========================================";
-ui_print "|       \    /      /\      \    /       |";
-ui_print "|        \  /      /  \      \  /        |";
-ui_print "|         ||      /----\      ||         |";
-ui_print "|         ||     /      \     ||         |";
 ui_print "|========================================|";
-ui_print "| Unitrix Kernel Installed Successfully. |";
+ui_print "|        Because of Vendor Freeze,       |";
+ui_print "|   It'll be flashable from Android 12,  |";
+ui_print "|         To whenever you miss it.       |";
+ui_print "|               Thank you!               |";
+ui_print "|     wrote in 2:56 am, Jan. 10th 2023   |";
+ui_print "|          Keternal (C) 2019-2023        |";
 ui_print "==========================================";
 
