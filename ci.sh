@@ -127,8 +127,8 @@ export DIFF=$(($BUILD_END - $BUILD_START))
 export BUILD_POINT=$(git log --pretty=format:'%h' -1)
 
 # Packing
-cp $IMG nito-ak3/
-cd nito-ak3/
+cp $IMG Flasher/
+cd Flasher/
 zip -r9 -9 "Nito-Kernel-$ZIP_VERSION-$BUILD_TYPE-$BUILD_POINT.zip" .
 md5sum Nito-Kernel-$ZIP_VERSION-$BUILD_TYPE-$BUILD_POINT.zip >> "md5sum_$(git log --pretty=format:'%h' -1).md5sum"
 
