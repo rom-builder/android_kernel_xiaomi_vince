@@ -118,7 +118,7 @@ export PATH="${PWD}/Toolchain/bin:$PATH"
 export KBUILD_COMPILER_STRING=$(${PWD}/Toolchain/bin/clang -v 2>&1 | grep ' version ' | sed 's/([^)]*)[[:space:]]//' | sed 's/([^)]*)//')
 
 # Compile Kernel
-make O=out LLVM=1 LLVM_IAS=1 whatdefconfig -j$(grep -c '^processor' /proc/cpuinfo) || finerr
+make O=out LLVM=1 LLVM_IAS=1 defconfig -j$(grep -c '^processor' /proc/cpuinfo) || finerr
 make O=out LLVM=1 LLVM_IAS=1 -j$(grep -c '^processor' /proc/cpuinfo) || finerr
 
 # Calc Build Used Time
