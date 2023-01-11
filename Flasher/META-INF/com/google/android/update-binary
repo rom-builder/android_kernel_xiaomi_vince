@@ -470,6 +470,7 @@ if [ -f version ]; then
   ui_print " ";
 fi;
 ui_print "|========================================|";
+ui_print "|   Fallen Leaves Will Be Reborn ...     |";
 ui_print "|  Kernel         : Nito Forever 2023    |";
 ui_print "|  Device         : Redmi 5 Plus         |";
 ui_print "|  Linux version  : 4.9.337 (rip)        |";
@@ -486,7 +487,7 @@ do_devicecheck;
 do_versioncheck;
 do_levelcheck;
 
-ui_print "Installing ...";
+ui_print "- Installing ...";
 CORE=$($BB grep -oE 'ak.*core.sh' anykernel.sh);
 [ -f tools/$CORE ] || $BB ln -s $AKHOME/tools/ak*-core.sh $AKHOME/tools/$CORE;
 PATH="$AKHOME/bin:$PATH" home=$AKHOME $BB ash anykernel.sh $2;
@@ -504,11 +505,11 @@ if [ "$(file_getprop anykernel.sh do.cleanup)" == 1 ]; then
 fi;
 
 ui_print "|========================================|";
-ui_print "|        Because of Vendor Freeze,       |";
+ui_print "|      Thanks To freezed kernel tree,    |";
 ui_print "|   It'll be flashable from Android 12,  |";
-ui_print "|         To whenever you miss it.       |";
-ui_print "|               Thank you!               |";
-ui_print "|     wrote in 2:56 am, Jan. 10th 2023   |";
+ui_print "|   To ... anywhere you want in future.  |";
+ui_print "|     Anyway, thanks to your support!    |";
+ui_print "|    wrote in 11:40 am, Jan. 11th 2023   |";
 ui_print "|          Keternal (C) 2019-2023        |";
 ui_print "==========================================";
 
