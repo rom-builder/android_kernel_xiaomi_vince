@@ -6,6 +6,7 @@
 # Copyright (C) 2019-2023 Keternal (KeternalGithub@163.com)
 # Copyright (C) 2020 StarLight5234
 # Copyright (C) 2021-22 GhostMaster69-dev
+# Copyright (C) 2023 Mohammed Rabil (rabilrbl)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 #
@@ -14,12 +15,11 @@
 
 git clone https://github.com/fabianonline/telegram.sh telegram
 
-TELEGRAM_ID=-1001868141906
+if [ -z $TELEGRAM_ID ] || [ -z $TELEGRAM_TOKEN ]; then
+	echo "Please provide telegram credentials with TELEGRAM_ID and TELEGRAM_TOKEN"
+	exit 1
+fi
 TELEGRAM=telegram/telegram
-BOT_API_KEY=963254339:AAGF81vp_kdZ-eXEV_xoOuJDgytQpont9y4
-TELEGRAM_TOKEN=${BOT_API_KEY}
-
-export TELEGRAM_TOKEN
 
 # Push kernel installer to channel
 function push_package() {
