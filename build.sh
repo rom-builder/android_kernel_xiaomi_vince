@@ -81,8 +81,8 @@ export COMPILER=$(${TC_PATH}/bin/clang -v 2>&1 | grep ' version ' | sed 's/([^)]
 build_kernel() {
 DATE=`date`
 BUILD_START=$(date +"%s")
-make LLVM=1 LLVM_IAS=1 ARCH=arm64 O=out defconfig
-make LLVM=1 LLVM_IAS=1 ARCH=arm64 O=out -j$(nproc --all) |& tee -a $HOME/build/build${BUILD}.txt
+make LLVM=1 LLVM_IAS=1 ARCH=arm64 defconfig
+make LLVM=1 LLVM_IAS=1 ARCH=arm64 -j$(nproc --all) |& tee -a $HOME/build/build${BUILD}.txt
 BUILD_END=$(date +"%s")
 DIFF=$(($BUILD_END - $BUILD_START))
 }
@@ -144,12 +144,12 @@ clone_tc
 COMMIT=$(git log --pretty=format:'"%h : %s"' -1)
 BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 KERNEL_DIR=$(pwd)
-KERN_IMG=$KERNEL_DIR/out/arch/arm64/boot/Image.gz
+KERN_IMG=$KERNEL_DIR/arch/arm64/boot/Image.gz
 VENDOR_MODULEDIR="$ZIP_DIR/modules/vendor/lib/modules"
 export KERN_VER=$(echo "$(make --no-print-directory kernelversion)")
 
 # Cleaning source
-make mrproper && rm -rf out
+make ARCH=arm64 mrproper
 
 start_sticker
 tg_sendinfo "$(echo -e "======= <b>$DEVICE</b> =======\n
