@@ -471,12 +471,13 @@ if [ -f version ]; then
 fi;
 ui_print "|========================================|";
 ui_print "|   Fallen Leaves Will Be Reborn ...     |";
-ui_print "|  Kernel         : Nito Forever 2023    |";
+ui_print "|  Kernel         : Unitrix + Nito       |";
 ui_print "|  Device         : Redmi 5 Plus         |";
 ui_print "|  Linux version  : 4.9.337 (rip)        |";
 ui_print "|  Compiler       : Cosmic clang         |";
-ui_print "|  Made by        : Slightly@Keternal    |";
-ui_print "|  My Best Regard : GhostMaster69-dev    |";
+ui_print "|  Made by        : rabilrbl             |";
+ui_print "|  My Best Regards to Slightly@Keternal  |";
+                            and  GhostMaster69-dev |";
 ui_print "|========================================|";
 ui_print "| AnyKernel3 by osm0sis @xda-developers. |";
 ui_print "==========================================";
