@@ -1,4 +1,4 @@
-NAME ?= Unitrix+Nito-Kernel
+NAME ?= Ritz-Kernel
 DATE := $(shell date "+%d%m%Y-%I%M")
 
 VERSION := $(shell cat ../Makefile | grep VERSION | head -n 1 | sed "s|.*=||1" | sed "s| ||g")

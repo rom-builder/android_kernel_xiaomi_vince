@@ -10,7 +10,7 @@ export TC_PATH="$HOME/clang"
 export ZIP_DIR="$(pwd)/Flasher"
 export KERNEL_DIR=$(pwd)
 export KBUILD_BUILD_VERSION="1"
-export KBUILD_BUILD_USER="Unitrix-Kernel"
+export KBUILD_BUILD_USER="Ritz-Kernel"
 export KBUILD_BUILD_HOST="Cosmic-Horizon"
 export KBUILD_BUILD_TIMESTAMP="$(TZ='Asia/Kolkata' date)"
 
@@ -28,8 +28,8 @@ if [[ -z ${TELEGRAM_TOKEN} ]]; then
     TELEGRAM_TOKEN="${tg_token}"
 fi
 
-if [[ -z ${UNITRIX_CHANNEL_ID} ]]; then
-    UNITRIX_CHANNEL_ID=$CHANNEL_ID
+if [[ -z ${RITZ_CHANNEL_ID} ]]; then
+    RITZ_CHANNEL_ID=$CHANNEL_ID
 fi
 
 # Upload buildlog to group
@@ -46,7 +46,7 @@ tg_pushzip()
 {
 	FZIP=$ZIP_DIR/$ZIP
 	curl -F document=@"$FZIP"  "https://api.telegram.org/bot$TELEGRAM_TOKEN/sendDocument" \
-		   -F chat_id=$UNITRIX_CHANNEL_ID
+		   -F chat_id=$RITZ_CHANNEL_ID
 }
 
 # Send Updates
