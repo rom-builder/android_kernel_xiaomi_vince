@@ -90,9 +90,11 @@ DIFF=$(($BUILD_END - $BUILD_START))
 }
 
 function make_flashable() {
+echo "Making flashable in $ZIP_DIR"
 unset ARCH O
 cd $ZIP_DIR
 make clean &>/dev/null
+echo "Kernel image $KERN_IMG"
 cp $KERN_IMG $ZIP_DIR
 if [ "$BRANCH" == "test" ]; then
 	make test &>/dev/null
@@ -102,6 +104,7 @@ else
 	make stable &>/dev/null
 fi
 ZIP=$(echo *.zip)
+echo "Zip file is: $ZIP"
 tg_pushzip
 
 }
