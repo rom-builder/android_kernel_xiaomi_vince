@@ -103,8 +103,8 @@ elif [ "$BRANCH" == "beta" ]; then
 else
 	make stable &>/dev/null
 fi
-ZIP=$(echo *.zip)
-echo "Zip file is: $ZIP"
+ZIP="$(ls *.zip)"
+echo "In dir $(pwd) Zip file is: $ZIP"
 tg_pushzip
 
 }
