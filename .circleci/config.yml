@@ -1,7 +1,7 @@
 jobs:
   build:
     docker:
-      - image: 31482281/ubuntu:latest
+      - image: rabilrbl/kernel-build
     steps:
       - checkout
       - run:
