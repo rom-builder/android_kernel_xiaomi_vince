@@ -72,11 +72,17 @@ function error_sticker() {
         -d sticker="$STICKER" \
         -d chat_id=$CHANNEL_ID
 }
-function clone_tc() {
-[ -d ${TC_PATH} ] || mkdir ${TC_PATH}
-git clone --depth=1 https://gitlab.com/GhostMaster69-dev/cosmic-clang.git ${TC_PATH}
-PATH="${TC_PATH}/bin:$PATH"
-export COMPILER=$(${TC_PATH}/bin/clang -v 2>&1 | grep ' version ' | sed 's/([^)]*)[[:space:]]//' | sed 's/([^)]*)//')
+
+function check_clang {
+    if ! which clang >/dev/null; then
+        echo "Installing cosmic clang.."
+	[ -d ${TC_PATH} ] || mkdir ${TC_PATH}
+	git clone --depth=1 https://gitlab.com/GhostMaster69-dev/cosmic-clang.git ${TC_PATH}
+	PATH="${TC_PATH}/bin:$PATH"
+    else
+        echo "Clang is already installed."
+    fi
+    export COMPILER=$(clang -v 2>&1 | grep ' version ' | sed 's/([^)]*)[[:space:]]//' | sed 's/([^)]*)//')
 }
 
 # Make Kernel
@@ -144,7 +150,7 @@ function tg_push_logs() {
 }
 
 # Start cloning toolchain
-clone_tc
+check_clang
 
 COMMIT=$(git log --pretty=format:'"%h : %s"' -1)
 BRANCH="$(git rev-parse --abbrev-ref HEAD)"
