@@ -13,6 +13,8 @@ export KBUILD_BUILD_VERSION="1"
 export KBUILD_BUILD_USER="Ritz-Kernel"
 export KBUILD_BUILD_HOST="Cosmic-Horizon"
 export KBUILD_BUILD_TIMESTAMP="$(TZ='Asia/Kolkata' date)"
+export ARCH=arm64
+export O=out
 
 # Ask Telegram Channel/Chat ID
 if [[ -z ${CHANNEL_ID} ]]; then
@@ -81,7 +83,7 @@ export COMPILER=$(${TC_PATH}/bin/clang -v 2>&1 | grep ' version ' | sed 's/([^)]
 build_kernel() {
 DATE=`date`
 BUILD_START=$(date +"%s")
-make LLVM=1 LLVM_IAS=1 defconfig
+make LLVM=1 LLVM_IAS=1 vince-perf_defconfig
 make LLVM=1 LLVM_IAS=1 -j$(nproc --all) |& tee -a $HOME/build/build${BUILD}.txt
 BUILD_END=$(date +"%s")
 DIFF=$(($BUILD_END - $BUILD_START))
