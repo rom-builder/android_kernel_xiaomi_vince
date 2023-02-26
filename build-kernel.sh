@@ -93,15 +93,15 @@ function make_flashable() {
 echo "Making flashable in $ZIP_DIR"
 unset ARCH O
 cd $ZIP_DIR
-make clean &>/dev/null
+make clean
 echo "Kernel image $KERN_IMG"
 cp $KERN_IMG $ZIP_DIR
 if [ "$BRANCH" == "test" ]; then
-	make test &>/dev/null
+	make test
 elif [ "$BRANCH" == "beta" ]; then
-	make beta &>/dev/null
+	make beta
 else
-	make stable &>/dev/null
+	make stable
 fi
 ZIP="$(ls *.zip)"
 echo "In dir $(pwd) Zip file is: $ZIP"
