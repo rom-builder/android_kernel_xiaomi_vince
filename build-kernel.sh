@@ -74,7 +74,7 @@ function error_sticker() {
 }
 function clone_tc() {
 [ -d ${TC_PATH} ] || mkdir ${TC_PATH}
-git clone -b clang-16.0.2 --depth=1 https://gitlab.com/anandhan07/aosp-clang.git ${TC_PATH}
+git clone --depth=1 https://gitlab.com/GhostMaster69-dev/cosmic-clang.git ${TC_PATH}
 PATH="${TC_PATH}/bin:$PATH"
 export COMPILER=$(${TC_PATH}/bin/clang -v 2>&1 | grep ' version ' | sed 's/([^)]*)[[:space:]]//' | sed 's/([^)]*)//')
 }
