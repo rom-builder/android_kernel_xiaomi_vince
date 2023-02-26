@@ -90,7 +90,7 @@ DIFF=$(($BUILD_END - $BUILD_START))
 }
 
 function make_flashable() {
-
+unset ARCH O
 cd $ZIP_DIR
 make clean &>/dev/null
 cp $KERN_IMG $ZIP_DIR
